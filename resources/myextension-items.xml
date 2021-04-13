@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<!--
+	ATTENTION: This is just an example file. You have to edit it according to your needs.
+-->
+
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="items.xsd">
+
+
+    <relations>
+        <relation code="Films2Actors" localized="false" autocreate="true">\
+            <deployment table="Films2Actors" typecode="12000"/>
+            <sourceElement type="Film" qualifier="film" collectiontype="set" cardinality="many" ordered="false">
+                <modifiers read="true" write="true" search="true" optional="true"/>
+            </sourceElement>
+            <targetElement type="Actor" qualifier="actor" collectiontype="set" cardinality="many" ordered="false">
+                <modifiers read="true" write="true" search="true"/>
+            </targetElement>
+        </relation>
+    </relations>
+
+    <itemtypes>
+
+        <itemtype code="Film"
+                  extends="Product"
+                  autocreate="true"
+                  generate="true">
+            <attributes>
+                <attribute qualifier="title" type="java.lang.String"/>
+                <attribute qualifier="duration" type="java.lang.Integer"/>
+            </attributes>
+        </itemtype>
+
+        <itemtype code="Actor"
+                  extends="Product"
+                  autocreate="true"
+                  generate="true">
+            <attributes>
+                <attribute qualifier="firstName" type="java.lang.String"/>
+                <attribute qualifier="lastName" type="java.lang.String"/>
+                <attribute qualifier="age" type="java.lang.Integer"/>
+            </attributes>
+        </itemtype>
+
+        <itemtype code="CarProduct"
+                  extends="Product"
+                  autocreate="true"
+                  generate="true">
+            <attributes>
+                <attribute qualifier="color" type="java.lang.String"/>
+                <attribute qualifier="weight" type="java.lang.Double"/>
+            </attributes>
+        </itemtype>
+
+    </itemtypes>
+</items>
+
