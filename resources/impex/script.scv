@@ -16,7 +16,7 @@ INSERT_UPDATE UserGroup;UID[unique=true];groups(uid)
      $START_USERRIGHTS
      			Type;UID;MemberOfGroups;Password;Target;read;change;create;delete;change_perm
      			UserGroup; myGroup; employeegroup;
-     			;;;;Product;+;-;-;-;-
+     			;;;;Product.name;+;-;-;-;-
      			Customer;myGroupCustomer;myGroup;1234;
      			$END_USERRIGHTS
 
