@@ -1,4 +1,4 @@
-//Create impex that will update all the product names to “The Best Product Ever”:
+#Create impex that will update all the product names to “The Best Product Ever”:
 
 INSERT_UPDATE Product; code[unique = true]; name; catalogVersion(version)
 			 		 ; product1		      ; product1; Staged
@@ -8,7 +8,7 @@ INSERT_UPDATE Product; code[unique = true]; name; catalogVersion(version)
 UPDATE Product[batchmode=true]; itemtype(code)[unique=true]; name;
      ; Product										 	   ; The Best Product Ever
 
-//Create usergroup “myGroup”. Create impex that will restrict ability to change the Product name for any user of “myGroup” group:
+#Create usergroup “myGroup”. Create impex that will restrict ability to change the Product name for any user of “myGroup” group:
 
 INSERT_UPDATE UserGroup;UID[unique=true];groups(uid)
 ;myGroup;employeegroup
@@ -20,11 +20,11 @@ INSERT_UPDATE UserGroup;UID[unique=true];groups(uid)
      			Customer;myGroupCustomer;myGroup;1234;
      			$END_USERRIGHTS
 
-//With the flexible search query (executing from hac) select all the users with the name starting from “M”:
+#With the flexible search query (executing from hac) select all the users with the name starting from “M”:
 
-select * from {User} where {name} like 'M%'
+select {pk} from {User} where {name} like 'M%'
 
-//With the flexible search query (executing from hac) select all the products from the “Staged” catalog:
+#With the flexible search query (executing from hac) select all the products from the “Staged” catalog:
 
-select * from {Product} where {cv:version}='Staged'
+select {pk} from {Product} where {cv:version}='Staged'
 

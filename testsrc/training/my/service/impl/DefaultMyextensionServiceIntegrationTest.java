@@ -8,17 +8,23 @@ import static training.my.constants.MyextensionConstants.PLATFORM_LOGO_CODE;
 
 import de.hybris.bootstrap.annotations.IntegrationTest;
 import de.hybris.platform.core.model.media.MediaModel;
+import de.hybris.platform.core.model.order.OrderModel;
 import de.hybris.platform.servicelayer.ServicelayerBaseTest;
+import de.hybris.platform.servicelayer.ServicelayerTest;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 
 import javax.annotation.Resource;
 
+import de.hybris.platform.servicelayer.search.SearchResult;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import training.my.service.MyextensionService;
 import training.my.service.impl.DefaultMyextensionService;
+
+import java.util.List;
 
 
 /**
@@ -28,7 +34,7 @@ import training.my.service.impl.DefaultMyextensionService;
  * in mind that by default it assumes that annotated field name matches the Spring Bean ID.
  */
 @IntegrationTest
-public class DefaultMyextensionServiceIntegrationTest extends ServicelayerBaseTest
+public class DefaultMyextensionServiceIntegrationTest extends ServicelayerTest
 {
 	@Resource
 	private MyextensionService myextensionService;
@@ -36,8 +42,7 @@ public class DefaultMyextensionServiceIntegrationTest extends ServicelayerBaseTe
 	private FlexibleSearchService flexibleSearchService;
 
 	@Before
-	public void setUp() throws Exception
-	{
+	public void setUp() throws Exception {
 		myextensionService.createLogo(PLATFORM_LOGO_CODE);
 	}
 

@@ -11,7 +11,7 @@
 
 
     <relations>
-        <relation code="Films2Actors" localized="false" autocreate="true">\
+        <relation code="Films2Actors" localized="false" autocreate="true">
             <deployment table="Films2Actors" typecode="12000"/>
             <sourceElement type="Film" qualifier="film" collectiontype="set" cardinality="many" ordered="false">
                 <modifiers read="true" write="true" search="true" optional="true"/>
@@ -25,33 +25,50 @@
     <itemtypes>
 
         <itemtype code="Film"
-                  extends="Product"
-                  autocreate="true"
-                  generate="true">
+                  extends="Product">
             <attributes>
-                <attribute qualifier="title" type="java.lang.String"/>
-                <attribute qualifier="duration" type="java.lang.Integer"/>
+                <attribute qualifier="title" type="java.lang.String">
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="duration" type="java.lang.Integer">
+                    <persistence type="property"/>
+                </attribute>
+
             </attributes>
         </itemtype>
 
         <itemtype code="Actor"
-                  extends="Product"
-                  autocreate="true"
-                  generate="true">
+                  extends="Product">
             <attributes>
-                <attribute qualifier="firstName" type="java.lang.String"/>
-                <attribute qualifier="lastName" type="java.lang.String"/>
-                <attribute qualifier="age" type="java.lang.Integer"/>
+                <attribute qualifier="firstName" type="java.lang.String">
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="lastName" type="java.lang.String">
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="age" type="java.lang.Integer">
+                    <persistence type="property"/>
+                </attribute>
             </attributes>
         </itemtype>
 
         <itemtype code="CarProduct"
-                  extends="Product"
-                  autocreate="true"
-                  generate="true">
+                  extends="Product">
             <attributes>
-                <attribute qualifier="color" type="java.lang.String"/>
-                <attribute qualifier="weight" type="java.lang.Double"/>
+                <attribute qualifier="color" type="java.lang.String">
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="weight" type="java.lang.Double">
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+        </itemtype>
+
+        <itemtype code="User" extends="Principal" autocreate="false" generate="true">
+            <attributes>
+                <attribute qualifier="age" type="java.lang.Integer">
+                    <persistence type="property"/>
+                </attribute>
             </attributes>
         </itemtype>
 

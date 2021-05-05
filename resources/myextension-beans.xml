@@ -59,4 +59,10 @@
 
 	-->
 
+	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
+		<property name="codeWithPk" type="java.lang.String"/>
+	</bean>
+
+
+
 </beans>
