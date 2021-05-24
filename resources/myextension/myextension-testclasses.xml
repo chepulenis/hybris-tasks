@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?><testclasses><myextension><testclass>training.my.service.impl.MyOrderServiceIntegrationTest</testclass><testclass>training.my.jalo.MyextensionTest</testclass><testclass>training.my.service.impl.MyOrderServiceUnitTest</testclass><testclass>training.my.service.impl.DefaultMyextensionServiceIntegrationTest</testclass></myextension></testclasses>
